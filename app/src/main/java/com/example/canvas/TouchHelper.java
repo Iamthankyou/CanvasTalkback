@@ -10,12 +10,14 @@ import androidx.customview.widget.ExploreByTouchHelper;
 import java.util.List;
 import android.view.accessibility.AccessibilityEvent;
 
+import com.example.canvas.method3.ITalkBackView;
+
 public class TouchHelper extends ExploreByTouchHelper {
 
-    private CanvasTalkBackView mCanvasView; // View triển khai interface CanvasTalkBackView
+    private ITalkBackView mCanvasView; // View triển khai interface CanvasTalkBackView
     private Context mContext;
 
-    public TouchHelper(View host, CanvasTalkBackView canvasView, Context mContext) {
+    public TouchHelper(View host, ITalkBackView canvasView, Context mContext) {
         super(host);
         this.mCanvasView = canvasView;
         this.mContext = mContext;
@@ -66,7 +68,7 @@ public class TouchHelper extends ExploreByTouchHelper {
         List<Rect> areas = mCanvasView.getInteractiveAreas();
         if (virtualViewId > 0 && virtualViewId <= areas.size()) {
             Rect area = areas.get(virtualViewId - 1);
-            return mCanvasView.performActionForArea(area, action); // todo
+            return true; // todo
         }
         return false;
     }

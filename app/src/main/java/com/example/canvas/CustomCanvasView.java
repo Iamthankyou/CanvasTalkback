@@ -34,7 +34,7 @@ public class CustomCanvasView extends View implements CanvasTalkBackView {
         mPaint.setStrokeWidth(5);
 
         // Khởi tạo DoodleAIDragTouchHelper
-        mTouchHelper = new TouchHelper(this, this, getContext());
+//        mTouchHelper = new TouchHelper(this, this, getContext());
         ViewCompat.setAccessibilityDelegate(this, mTouchHelper);
     }
 

@@ -7,26 +7,10 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.core.view.accessibility.AccessibilityNodeProviderCompat;
 
-import android.graphics.Rect;
-import android.os.Bundle;
 import android.view.View;
-
-import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
-import androidx.core.view.accessibility.AccessibilityNodeProviderCompat;
 
 import java.util.List;
 
-import android.graphics.Rect;
-import android.os.Bundle;
-import android.view.View;
-
-import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
-import androidx.core.view.accessibility.AccessibilityNodeProviderCompat;
-import  androidx.core.view.AccessibilityDelegateCompat; // Import
-
-import com.example.canvas.CustomCanvasView2;
-
-import java.util.List;
 
 public class MyAccessibilityNodeProvider extends AccessibilityDelegateCompat { // Kế thừa
 

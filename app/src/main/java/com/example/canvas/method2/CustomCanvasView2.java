@@ -1,30 +1,17 @@
-package com.example.canvas;
+package com.example.canvas.method2;
 
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.util.AttributeSet;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.AccessibilityDelegate;
-import android.view.accessibility.AccessibilityEvent;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.view.accessibility.AccessibilityNodeProvider;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.core.view.AccessibilityDelegateCompat;
 import androidx.core.view.ViewCompat;
-import androidx.core.view.accessibility.AccessibilityNodeProviderCompat;
 
-import com.example.canvas.method2.ButtonCanvasElement;
-import com.example.canvas.method2.CanvasAccessibilityDelegate;
-import com.example.canvas.method2.CanvasElement;
-import com.example.canvas.method2.MyAccessibilityNodeProvider;
+import com.example.canvas.InteractiveArea;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
