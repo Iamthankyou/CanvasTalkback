@@ -8,6 +8,7 @@ public interface ITalkBackView {
     List<Rect> getInteractiveAreas();
     String getContentDescriptionForArea(Rect area);
     void updateInteractiveAreaPosition(int index, Rect newRect);
-    void addInteractiveElement(TalkBackArea talkBackArea);
+    void updateDescriptionPosition(int index, String newDescription);
+    void addInteractiveElement(TalkBackViewItem talkBackViewItem);
     boolean performActionForArea(int virtualViewId, int action);
 }

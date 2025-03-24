@@ -54,9 +54,10 @@ public class CustomCanvasView3 extends View implements TalkBackClickListener{
 //                canvas.drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR);
 //                canvas.drawRect(new Rect(100+distance, 100+distance, 500+distance, 500+distance), mPaint);
 //                canvas.drawRect(new Rect(600, 100, 1000, 500), mPaint);
-                invalidate();
-                updateAreaPosition(0, new Rect(100 + distance, 100 + distance, 500 + distance, 500 + distance));
+//                invalidate();
+//                updateAreaPosition(0, new Rect(100 + distance, 100 + distance, 500 + distance, 500 + distance));
                 Toast.makeText(getContext(), "Update element 1", Toast.LENGTH_SHORT).show();
+                updateDescription(0, "Update description");
             }, 10000);
 
 
@@ -110,7 +111,12 @@ public class CustomCanvasView3 extends View implements TalkBackClickListener{
     }
 
     public void addArea(Rect bounds, String description) {
-        talkBackDelegate.addInteractiveElement(new TalkBackArea(bounds, description));
+        talkBackDelegate.addInteractiveElement(new TalkBackViewItem(bounds, description));
+        mTouchHelper.invalidateVirtualView(talkBackDelegate.getInteractiveAreas().size());
+    }
+
+    public void updateDescription(int index, String description){
+        talkBackDelegate.updateDescriptionPosition(index, description);
         mTouchHelper.invalidateVirtualView(talkBackDelegate.getInteractiveAreas().size());
     }
 

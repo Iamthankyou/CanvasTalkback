@@ -6,4 +6,5 @@ public interface InteractiveCanvasElement {
     Rect getBounds();
     String getContentDescription();
     void updateBounds(Rect newBounds);
+    void updateDescription(String description);
 }

@@ -28,6 +28,7 @@ public class TouchHelperTalkBack extends ExploreByTouchHelper {
 
     @Override
     protected int getVirtualViewAt(float x, float y) {
+        Log.i("duy-duy", "getVirtualViewAt: x, y: " + x + ", " + y);
         List<Rect> areas = mTalkBackView.getInteractiveAreas();
         for (int i = 0; i < areas.size(); i++) {
             if (areas.get(i).contains((int) x, (int) y)) {
@@ -39,6 +40,7 @@ public class TouchHelperTalkBack extends ExploreByTouchHelper {
 
     @Override
     protected void getVisibleVirtualViews(List<Integer> virtualViews) {
+        Log.i("duy-duy", "getVisibleVirtualViews: size: " + virtualViews.size());
         // Thêm tất cả các khu vực có thể tương tác vào danh sách
         List<Rect> areas = mTalkBackView.getInteractiveAreas();
         for (int i = 0; i < areas.size(); i++) {
@@ -49,9 +51,9 @@ public class TouchHelperTalkBack extends ExploreByTouchHelper {
     @Override
     protected void onPopulateEventForVirtualView(int virtualViewId, AccessibilityEvent event) {
         List<Rect> areas = mTalkBackView.getInteractiveAreas();
+        Log.i("duy-duy", "onPoludateEventForVirtualView: " + virtualViewId);
         if (virtualViewId > 0 && virtualViewId <= areas.size()) {
             Rect area = areas.get(virtualViewId - 1);
-//            event.setContentDescription(mTalkBackView.getContentDescriptionForArea(area));
         }
     }
 
@@ -62,11 +64,7 @@ public class TouchHelperTalkBack extends ExploreByTouchHelper {
             Log.i("duy-duy", "onPoludateNodeForVirtualView: " + virtualViewId);
             Rect area = areas.get(virtualViewId - 1);
             node.setContentDescription(mTalkBackView.getContentDescriptionForArea(area));
-//            node.addAction(AccessibilityNodeInfoCompat.AccessibilityActionCompat.ACTION_CLICK);
             node.addAction(AccessibilityNodeInfoCompat.AccessibilityActionCompat.ACTION_CLICK);
-//            node.addAction(AccessibilityNodeInfoCompat.AccessibilityActionCompat.ACTION_SELECT);
-//            node.addAction();
-//            node.addAction(AccessibilityNodeInfoCompat.AccessibilityActionCompat.ACTION_ACCESSIBILITY_FOCUS);
             node.setBoundsInParent(area);
             node.setClickable(true);
         }

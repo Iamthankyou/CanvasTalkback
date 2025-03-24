@@ -2,11 +2,11 @@ package com.example.canvas.method3;
 
 import android.graphics.Rect;
 
-class TalkBackArea implements InteractiveCanvasElement {
+class TalkBackViewItem implements InteractiveCanvasElement {
     private Rect bounds;
     private String description;
 
-    public TalkBackArea(Rect bounds, String description) {
+    public TalkBackViewItem(Rect bounds, String description) {
         this.bounds = bounds;
         this.description = description;
     }
@@ -24,5 +24,10 @@ class TalkBackArea implements InteractiveCanvasElement {
     @Override
     public void updateBounds(Rect newBounds) {
         this.bounds = newBounds;
+    }
+
+    @Override
+    public void updateDescription(String description) {
+        this.description = description;
     }
 }

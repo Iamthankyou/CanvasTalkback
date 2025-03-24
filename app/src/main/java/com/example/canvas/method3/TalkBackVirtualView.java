@@ -43,8 +43,15 @@ public class TalkBackVirtualView implements ITalkBackView {
     }
 
     @Override
-    public void addInteractiveElement(TalkBackArea talkBackArea) {
-        interactiveElements.add(talkBackArea);
+    public void updateDescriptionPosition(int index, String newDescription) {
+        if (index >= 0 && index < interactiveElements.size()) {
+            interactiveElements.get(index).updateDescription(newDescription);
+        }
+    }
+
+    @Override
+    public void addInteractiveElement(TalkBackViewItem talkBackViewItem) {
+        interactiveElements.add(talkBackViewItem);
     }
 
     @Override
